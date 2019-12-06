@@ -106,7 +106,116 @@ public class Huffman {
         return result;
     }
     public static String getHexadecimalEncoding(String binaryString) {
-        BigInteger b = new BigInteger(binaryString, 2);
-        return b.toString(16);
+        // BigInteger b = new BigInteger(binaryString, 2);
+        // return b.toString(16);
+		int size = 5;
+        String[] tokens = binaryString.split("(?<=\\G.{" + size + "})");
+        int count = tokens.length;
+        String result = "";
+        for(int i = 0;i<count;i++) {
+            result += getCustomCharEncoding(tokens[i]);
+        }
+        return result;
+    }
+    public static String getCustomCharEncoding(String code) {
+        String result = "";
+        switch (code) {
+            case "00000":
+                result = "0";
+                break;
+            case "00001":
+                result = "1";
+                break;
+            case "00011":
+                result = "2";
+                break;
+            case "00100":
+                result = "3";
+                break;
+            case "00101":
+                result = "4";
+                break;
+            case "00110":
+                result = "5";
+                break;
+            case "00111":
+                result = "6";
+                break;
+            case "01000":
+                result = "7";
+                break;
+            case "01001":
+                result = "8";
+                break;
+            case "01010":
+                result = "9";
+                break;
+            case "01011":
+                result = "a";
+                break;
+            case "01100":
+                result = "b";
+                break;
+            case "01101":
+                result = "c";
+                break;
+            case "01110":
+                result = "d";
+                break;
+            case "01111":
+                result = "e";
+                break;
+            case "10000":
+                result = "f";
+                break;
+            case "10001":
+                result = "g";
+                break;
+            case "10010":
+                result = "h";
+                break;
+            case "10011":
+                result = "i";
+                break;
+            case "10100":
+                result = "j";
+                break;
+            case "10101":
+                result = "k";
+                break;
+            case "10110":
+                result = "l";
+                break;
+            case "10111":
+                result = "m";
+                break;
+            case "11000":
+                result = "n";
+                break;
+            case "11001":
+                result = "o";
+                break;
+            case "11010":
+                result = "p";
+                break;
+            case "11011":
+                result = "q";
+                break;
+            case "11100":
+                result = "r";
+                break;
+            case "11101":
+                result = "s";
+                break;
+            case "11110":
+                result = "t";
+                break;
+            case "11111":
+                result = "u";
+                break;
+            default:
+                break;
+        }
+        return result;
     }
 }
